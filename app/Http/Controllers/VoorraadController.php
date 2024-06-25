@@ -133,4 +133,21 @@ class VoorraadController extends Controller
         // Return the user to the index page with a success message
         return redirect()->route('voorraad.overzicht_producten')->with('success', 'Product is succesvol gewijzigd');
     }
+
+    // Function to delete a selected product
+    public function delete($productId)
+    {
+        // try to find the first product with the unique ID (productId), then deletes it
+        try {
+            $reservation = Producten::findOrFail($productId);
+            $reservation->delete();
+
+            // Redirect back with a success message
+            return redirect()->back()->with('success', 'Product succesvol verwijderd');
+        } catch (\Exception $e) {
+            // Handle any other exceptions or errors that might occur during deletion
+            // Redirect back with those error messages
+            return redirect()->back()->with('error', 'Product is niet verwijderd ' . $e->getMessage());
+        }
+    }
 }

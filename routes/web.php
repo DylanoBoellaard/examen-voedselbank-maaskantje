@@ -31,3 +31,6 @@ Route::post('/voorraad/store', [VoorraadController::class, 'store'])->name('voor
 Route::get('/voorraad/wijzigen/{productId}', [VoorraadController::class, 'wijzigen'])->name('voorraad.wijzigen');
 // Edit form submit page
 Route::put('/voorraad/update/{productId}', [VoorraadController::class, 'update'])->name('voorraad.update');
+
+// Delete reservation
+Route::delete('/voorraad/delete/{productId}', [VoorraadController::class, 'delete'])->name('voorraad.delete');

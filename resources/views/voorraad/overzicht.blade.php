@@ -47,7 +47,15 @@
                             <img class="small-img" src="/img/pencil-button.png" alt="pencil-button.png">
                         </a>
                     </td>
-                    <td>verwijderen</td>
+                    <td>
+                        <form action="{{ route('voorraad.delete', [$product -> id]) }}" method="POST"> <!-- Route to delete page with product ID -->
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" style="background: none; border: none; padding: 0; margin: 0; cursor: pointer;">
+                                <img class="small-img" src="/img/RedCross.png" alt="Delete_Icon.png">
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 @empty
                 <tr>
