@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Leverancier;
 
@@ -15,30 +16,39 @@ class LeverancierController extends Controller
 
     public function store(Request $request)
     {       
-      
+   
         // validating the request
         $validatedData = $request->validate([
             'bedrijfsnaam' => ['required', 'max:100'],
-            'adres' => ['required', 'max:60'],
+            'huisnummer' => ['required', 'max:10'],
+            'postcode' => ['required', 'max:6'],
+            'straat' => ['required', 'max:50'],
+            'plaats' => ['required', 'max:50'],
             'email' => ['required', 'email', 'max:30'],
-            'contactpersoon' => ['required', 'max:250'],
+            'voornaam' => ['required', 'max:100'],
+            'tussenvoegsel' => ['max:50'],
+            'achternaam' => ['required', 'max:100'],
             'telefoonnummer' => ['required', 'min:14' , 'max:40'],
         ]);
 
         // storing the validated data
         $leverancier = new Leverancier([
             'bedrijfsnaam' => $validatedData['bedrijfsnaam'],
-            'adres' => $validatedData['adres'],
+            'huisnummer' => $validatedData['huisnummer'],
+            'postcode' => $validatedData['postcode'],
+            'straat' => $validatedData['straat'],
+            'plaats' => $validatedData['plaats'],
             'email' => $validatedData['email'],
-            'contactpersoon' => $validatedData['contactpersoon'],
-            'telefoonnummer' => $validatedData['telefoonnummer'],
+            'voornaam' => $validatedData['voornaam'],
+            'tussenvoegsel' => $validatedData['tussenvoegsel'] ?? ' ',
+            'achternaam' => $validatedData['achternaam'],
+            'telefoon' => $validatedData['telefoonnummer'],
         ]);
-
-        dd($leverancier);
 
         // saving the data
         $leverancier->save();
 
-       
+        // redirecting to the homepage
+        return redirect('/leverancier/create')->with('status', 'Leverancier is toegevoegd!');
     }
 }
