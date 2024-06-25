@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::get('/leverancier/create', [LeverancierController::class, 'create']);
 Route::post('/leverancier', [LeverancierController::class, 'store']);
 Route::get('/leverancier/show', [LeverancierController::class, 'show']);
+Route::get('/leverancier/edit/{id}', [LeverancierController::class, 'edit']);
+Route::put('/leverancier/{id}', [LeverancierController::class, 'update']);
+Route::delete('/leverancier/{id}', [LeverancierController::class, 'destroy']);

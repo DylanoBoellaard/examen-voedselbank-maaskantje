@@ -31,8 +31,12 @@
                 <td>{{ $leverancier->email }}</td>
                 <td>{{ $leverancier->voornaam }} {{ $leverancier->tussenvoegsel }} {{ $leverancier->achternaam }}</td>
                 <td>{{ $leverancier->telefoon }}</td>
-                <td><a href="">🖊️</a></td>
-                <td><a href="">X</a></td>
+                <td><a href="/leverancier/edit/{{ $leverancier->id }}">🖊️</a></td>
+                <form action="/leverancier/{{ $leverancier->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <td><input type="submit" value="❌"></td>
+                </form>
             </tr>
             @endforeach
         </table>
