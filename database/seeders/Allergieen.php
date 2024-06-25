@@ -28,6 +28,7 @@ class Allergieen extends Seeder
             'Zwaveldioxide en sulfieten',
             'Lupine',
             'Weekdieren',
+            'Geen allergie',
         ];
 
         DB::table('allergieen')->insert(
