@@ -9,16 +9,21 @@
     --black: rgb(0,0,0);
     --darker-gray: rgb(150, 150, 150);
     --lighter-gray: rgb(187, 187, 187);
+    --even-lighter-gray: rgb(206, 206, 206);
 }
 
-/* gives the body a display flex and puts all the content in the middle of the body element */
+/* puts all the content in the middle of the body element */
 /* also put all the content under each other and give the body a basic height of the full screen */
 body {
-    display:  flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
     height: 100vh;
+}
+
+/* gave a display flex and a column flex direction and a align items center to the form and body element */
+body, form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* gives the title a fixed position at the top left and with a little space */
@@ -49,4 +54,36 @@ th, td {
 td {
     background-color: var(--lighter-gray);
     text-align: center;
+}
+
+/* gives these classes some space at the bottom also some space from the edges in the elements */
+/* but it also gives some background color to the elements with these classes */
+input.uitgifte, input.samenstelling, input.klant_id, input.submit {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: var(--even-lighter-gray);
+}
+
+/* gives the element with this class more space at the top and also gives it a pointer as cursor */
+input.submit {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* adds some spacing at the bottom of the errors */
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* adds some space at the bottom of the create section */
+section.create {
+    margin-bottom: 2rem;
+}
+
+/* removes text decoration also it gives the a element an color black with a light gray background and some space in the a element */
+a {
+    text-decoration: none;
+    color: var(--black);
+    background-color: var(--lighter-gray);
+    padding: 1rem;
 }

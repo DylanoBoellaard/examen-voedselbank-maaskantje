@@ -4,6 +4,10 @@
     <h1>Overzicht voedsel pakketten</h1>
 </section>
 
+<section class="create">
+    <a href="{{route('create')}}">Nieuw voedsel pakket</a>
+</section>
+
 <section class="table">
     <table>
         <thead>
@@ -17,6 +21,9 @@
                 <th>Straat</th>
             </tr>
         </thead>
+        @if(session()->has('alert'))
+        <h1>{{session()->get('alert')}}</h1>
+        @else
         <tbody>
             @forelse ($data as $voedselpakket)
             <tr>
@@ -34,5 +41,6 @@
             </tr>
             @endforelse
         </tbody>
+        @endif
     </table>
 </section>

@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/voedselpakket', [VoedselPakketController::class, 'overzicht_voedsel_pakket'])->name('overzicht');
+
+Route::get('/voedselpakket/create', [VoedselPakketController::class, 'create'])->name('create');
+
+Route::post('/voedselpakket/store', [VoedselPakketController::class, 'store'])->name('store');
