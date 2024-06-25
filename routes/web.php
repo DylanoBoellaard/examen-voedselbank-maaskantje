@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\VoorraadController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LeverancierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,13 @@ Route::put('/voorraad/update/{productId}', [VoorraadController::class, 'update']
 
 // Delete reservation
 Route::delete('/voorraad/delete/{productId}', [VoorraadController::class, 'delete'])->name('voorraad.delete');
+
+// Leverancier create
+Route::get('/leverancier/create', [LeverancierController::class, 'create']);
+Route::post('/leverancier', [LeverancierController::class, 'store']);
+Route::get('/leverancier/show', [LeverancierController::class, 'show']);
+// Leverancier update
+Route::get('/leverancier/edit/{id}', [LeverancierController::class, 'edit']);
+Route::put('/leverancier/{id}', [LeverancierController::class, 'update']);
+// Leverancier delete
+Route::delete('/leverancier/{id}', [LeverancierController::class, 'destroy']);
