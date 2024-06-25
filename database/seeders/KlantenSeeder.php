@@ -91,5 +91,21 @@ class KlantenSeeder extends Seeder
             'email' => 'rubenmonster@outlook.com',
             'telefoon' => '+31 6 67394856',
         ]);
+
+        \App\Models\Klant::create([
+            'naam' => 'Klant',
+            'aantalvolwassenen' => 7,
+            'aantalkinderen' => 8,
+            'aantalbabies' => 1,
+            'huisnummer' => '12',
+            'postcode' => '3948SK',
+            'plaats' => 'Utrecht',
+            'straat' => 'koperstraat',
+            'voornaam' => 'vincent',
+            'tussenvoegsel' => 'van de',
+            'achternaam' => 'merwe',
+            'email' => 'vincentmerwe@livemail.com',
+            'telefoon' => '+31 6 02938475',
+        ]);
     }
 }
