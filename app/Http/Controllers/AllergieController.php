@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Allergieen;
+use App\Models\Allergie;
 
 class AllergieController extends Controller
 {
     public function overzicht_allergieen()
     {
-        $allergieen = Allergieen::all('naam');
-        return view('allergieen', ['allergieen' => $allergieen]);
+        $allergie = Allergie::all('naam');
+        return view('allergie', ['allergieen' => $allergie]);
     }
 }

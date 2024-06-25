@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Allergieen extends Model
+class Productallergieen extends Model
 {
     use HasFactory;
     // making sure the table isn't called 'allergieens'
-    protected $table = 'allergieen';
+    protected $table = 'Productallergieen';
     // all tables that are fillable
     protected $fillable = [
-        'naam',
+        'product_id',
+        'allergie_id',
     ];
 }
