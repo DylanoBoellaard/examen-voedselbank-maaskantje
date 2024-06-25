@@ -9,7 +9,7 @@ class AllergieController extends Controller
 {
     public function overzicht_allergieen()
     {
-        $allergieen = Allergieen::all();
+        $allergieen = Allergieen::all('naam');
         return view('allergieen', ['allergieen' => $allergieen]);
     }
 }
