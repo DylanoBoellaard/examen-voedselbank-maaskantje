@@ -22,3 +22,7 @@ Route::get('/klant', [klantController::class, 'overzicht_klant'])->name('klant.o
 Route::get('/klant/toevoegen', [klantController::class, 'toevoegen'])->name('klant.toevoegen');
 
 Route::post('/klant/store', [klantController::class, 'store'])->name('klant.store');
+
+Route::get('/klant/wijzigen/{klant}', [klantController::class, 'wijzigen'])->name('klant.wijzigen');
+
+Route::put('/klant/update/{klant}', [klantController::class, 'update'])->name('klant.update');

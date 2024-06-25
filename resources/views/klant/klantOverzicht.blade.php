@@ -43,9 +43,11 @@
                 <td>{{ $klant->achternaam }}</td>
                 <td>{{ $klant->email }}</td>
                 <td>{{ $klant->telefoon }}</td>
-            </tr>
-            <!-- If there are no klanten, display a message -->
-            @empty
+                <td>
+                    <a href="{{route('klant.wijzigen', [$klant -> id])}}">wijzigen</a>
+                </td>
+                <!-- If there are no klanten, display a message -->
+                @empty
             <tr>
                 <td colspan="13">Er zijn geen klanten gevonden.</td>
             </tr>
