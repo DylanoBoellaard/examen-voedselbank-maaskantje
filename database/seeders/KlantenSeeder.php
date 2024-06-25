@@ -18,9 +18,7 @@ class KlantenSeeder extends Seeder
         $data = [
             [
                 'naam' => 'Familie Jansen',
-                'aantalvolwassenen' => 2,
-                'aantalkinderen' => 1,
-                'aantalbabies' => 0,
+                'gezinssamenstelling_id' => 1,
                 'huisnummer' => '12',
                 'postcode' => '1234AB',
                 'plaats' => 'Amsterdam',
@@ -33,9 +31,7 @@ class KlantenSeeder extends Seeder
             ],
             [
                 'naam' => 'Familie de Vries',
-                'aantalvolwassenen' => 3,
-                'aantalkinderen' => 1,
-                'aantalbabies' => 0,
+                'gezinssamenstelling_id' => 2,
                 'huisnummer' => '34',
                 'postcode' => '5678CD',
                 'plaats' => 'Rotterdam',
@@ -48,9 +44,7 @@ class KlantenSeeder extends Seeder
             ],
             [
                 'naam' => 'Familie Smit',
-                'aantalvolwassenen' => 2,
-                'aantalkinderen' => 1,
-                'aantalbabies' => 1,
+                'gezinssamenstelling_id' => 3,
                 'huisnummer' => '56',
                 'postcode' => '9012EF',
                 'plaats' => 'Utrecht',
@@ -63,9 +57,7 @@ class KlantenSeeder extends Seeder
             ],
             [
                 'naam' => 'Familie van Dijk',
-                'aantalvolwassenen' => 2,
-                'aantalkinderen' => 3,
-                'aantalbabies' => 0,
+                'gezinssamenstelling_id' => 4,
                 'huisnummer' => '78',
                 'postcode' => '3456GH',
                 'plaats' => 'Den Haag',
