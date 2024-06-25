@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Productcategorieen;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Producten;
 
-class ProductSeeder extends Seeder
+class ProductcategorieenSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,72 +15,72 @@ class ProductSeeder extends Seeder
     {
         $data = [
             [
-                'productnaam' => 'Pinda',
-                'streepjescode' => '1234832910345',
+                'product_Id' => 1,
+                'categorie_Id' => 8,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Babypoeder',
-                'streepjescode' => '9234765012346',
+                'product_Id' => 2,
+                'categorie_Id' => 9,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Appel',
-                'streepjescode' => '0987654321098',
+                'product_Id' => 3,
+                'categorie_Id' => 1,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Melk',
-                'streepjescode' => '8763028462934',
+                'product_Id' => 4,
+                'categorie_Id' => 3,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Brood',
-                'streepjescode' => '1029384737321',
+                'product_Id' => 5,
+                'categorie_Id' => 4,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Cola',
-                'streepjescode' => '9283746501923',
+                'product_Id' => 6,
+                'categorie_Id' => 5,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Spaghetti',
-                'streepjescode' => '0192019264732',
+                'product_Id' => 7,
+                'categorie_Id' => 6,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Tomatensoep',
-                'streepjescode' => '5463728192034',
+                'product_Id' => 8,
+                'categorie_Id' => 7,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
                 'updated_at' => now()->micro(6),
             ],
             [
-                'productnaam' => 'Melk chocolade',
-                'streepjescode' => '0912647328193',
+                'product_Id' => 9,
+                'categorie_Id' => 8,
                 'isActief' => true,
                 'opmerkingen' => null,
                 'created_at' => now()->micro(6),
@@ -89,7 +89,7 @@ class ProductSeeder extends Seeder
         ];
 
         foreach ($data as $item) {
-            Producten::create($item);
+            Productcategorieen::create($item);
         }
     }
 }

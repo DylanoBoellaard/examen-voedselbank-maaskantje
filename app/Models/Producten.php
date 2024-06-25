@@ -20,7 +20,17 @@ class Producten extends Model
         'updated_at',
     ];
 
-    // protected $casts = [
-    //     'isActief' => 'boolean',
-    // ];
+    public function categories()
+    {
+        /* One product contains many categories. It is being handled by the productcategorieen table.
+            Laravel will define the relationship via the productcategorieen table
+        */
+        return $this->belongsToMany(Categorieen::class, 'productcategorieen', 'product_Id', 'categorie_Id');
+    }
+
+    public function magazijn()
+    {
+        // One product has one magazijn (entry)
+        return $this->hasOne(Magazijn::class, 'product_Id');
+    }
 }
