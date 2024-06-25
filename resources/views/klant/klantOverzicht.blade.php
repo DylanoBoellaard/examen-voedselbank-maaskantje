@@ -11,6 +11,7 @@
     <table>
         <thead>
             <tr>
+                <!-- Table head for the klanten -->
                 <th>Naam</th>
                 <th>aantalvolwassenen</th>
                 <th>aantalkinderen</th>
@@ -44,6 +45,7 @@
                 <td>{{ $klant->email }}</td>
                 <td>{{ $klant->telefoon }}</td>
                 <td>
+                    <!-- Route to edit page with klant ID -->
                     <a href="{{route('klant.wijzigen', [$klant -> id])}}">wijzigen</a>
                 </td>
                 <td>

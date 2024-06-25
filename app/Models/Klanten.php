@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Klanten extends Model
 {
     use HasFactory;
-
+    // 'klanten' is the name of the table in the database
     protected $table = 'klanten';
-
     protected $fillable = [
         'naam',
         'gezinssamenstelling_id', // 'gezinssamenstelling_id' is a foreign key

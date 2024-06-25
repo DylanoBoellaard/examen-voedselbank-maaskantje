@@ -12,6 +12,7 @@ class klantController extends Controller
     //
     public function overzicht_klant()
     {
+        //get all the klanten and gezinsamenstelling
         $klanten = DB::table('klanten')
             ->select(
                 'klanten.id',
@@ -29,6 +30,7 @@ class klantController extends Controller
                 'gezinssamenstelling.aantalkinderen',
                 'gezinssamenstelling.aantalbabies'
             )
+            //join the klanten and gezinssamenstelling
             ->join(
                 'gezinssamenstelling',
                 'klanten.gezinssamenstelling_id',
@@ -36,11 +38,13 @@ class klantController extends Controller
                 'gezinssamenstelling.id'
             )
             ->get();
+        //return the view with the klanten
         return view('klant/klantOverzicht', ['klanten' => $klanten]);
     }
 
     public function toevoegen()
     {
+        //return the view to add a new klant
         return view('klant/klantToevoegen');
     }
 
@@ -89,6 +93,7 @@ class klantController extends Controller
 
     public function wijzigen(Klanten $klant)
     {
+        //return the view to edit the klant
         return view('klant/klantWijzigen', compact('klant'));
     }
 
