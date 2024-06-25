@@ -1,0 +1,13 @@
+body {
+    div.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    a#img {
+        img {
+            width: 50px;
+            margin-top: 1rem;
+        }
+    }
+}
