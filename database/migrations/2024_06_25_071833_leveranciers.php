@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('plaats')->max(50);
             $table->string('straat')->max(50);
             $table->string('voornaam')->max(100);
-            $table->string('tussenvoegsel')->max(50)->nulleble();
-            $table->string('achternaam')->max(100);
-            $table->string('email')->max(30);
-            $table->string('telefoon')->max(40);
+            $table->string('tussenvoegsel')->max(50);
+            $table->string('achternaam')->max(50);
+            $table->string('email')->max(50);
+            $table->string('telefoon')->max(50);
             $table->rememberToken();
             $table->timestamps();
         }); 
