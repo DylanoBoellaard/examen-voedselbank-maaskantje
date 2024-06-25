@@ -17,3 +17,5 @@ use App\Http\Controllers\LeverancierController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/leverancier/create', [LeverancierController::class, 'create']);
