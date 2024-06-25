@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\VoorraadController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\klantController;
 use App\Http\Controllers\LeverancierController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,18 @@ use App\Http\Controllers\LeverancierController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/klant', [klantController::class, 'overzicht_klant'])->name('klant.overzicht_klant');
+
+Route::get('/klant/toevoegen', [klantController::class, 'toevoegen'])->name('klant.toevoegen');
+
+Route::post('/klant/store', [klantController::class, 'store'])->name('klant.store');
+
+Route::get('/klant/wijzigen/{klant}', [klantController::class, 'wijzigen'])->name('klant.wijzigen');
+
+Route::put('/klant/update/{klant}', [klantController::class, 'update'])->name('klant.update');
+
+Route::delete('/klant/verwijderen/{klant}', [klantController::class, 'verwijderen'])->name('klant.verwijderen');
 
 // Voorraad
 // Voorraad producten overzicht

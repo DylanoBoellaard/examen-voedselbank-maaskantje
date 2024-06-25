@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        //create migration for gezinssamenstelling
         Schema::create('gezinssamenstelling', function (Blueprint $table) {
             $table->id();
             $table->integer('aantalvolwassenen');
@@ -27,6 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        //drop table gezinssamenstelling
+        Schema::dropIfExists('gezinssamenstelling');
     }
 };

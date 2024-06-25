@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('plaats');
             $table->string('straat');
             $table->string('voornaam');
-            $table->string('tussenvoegsel');
+            $table->string('tussenvoegsel')->nullable();
             $table->string('achternaam');
             $table->string('email');
             $table->string('telefoon');
@@ -40,6 +40,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        //drop table klanten
+        Schema::dropIfExists('klanten');
     }
 };
