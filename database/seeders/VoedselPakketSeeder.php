@@ -12,31 +12,31 @@ class VoedselPakketSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\voedselpakket::create([
+        \App\Models\VoedselPakket::create([
             'datum_uitgifte' => '2024-01-07',
             'datum_samenstelling' => '2024-01-02',
             'klant_id' => 1,
         ]);
 
-        \App\Models\voedselpakket::create([
+        \App\Models\VoedselPakket::create([
             'datum_uitgifte' => '2024-03-30',
             'datum_samenstelling' => '2024-03-15',
             'klant_id' => 2,
         ]);
 
-        \App\Models\voedselpakket::create([
+        \App\Models\VoedselPakket::create([
             'datum_uitgifte' => '2024-04-10',
             'datum_samenstelling' => '2024-04-03',
             'klant_id' => 3,
         ]);
 
-        \App\Models\voedselpakket::create([
+        \App\Models\VoedselPakket::create([
             'datum_uitgifte' => '2024-04-27',
             'datum_samenstelling' => '2024-04-20',
             'klant_id' => 4,
         ]);
 
-        \App\Models\voedselpakket::create([
+        \App\Models\VoedselPakket::create([
             'datum_uitgifte' => '2024-05-24',
             'datum_samenstelling' => '2024-05-13',
             'klant_id' => 5,

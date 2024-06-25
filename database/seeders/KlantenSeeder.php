@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class KlantenSeeder extends Seeder
 {
@@ -13,7 +12,7 @@ class KlantenSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('klanten')->insert([
+        \App\Models\Klant::create([
             'naam' => 'Klant',
             'aantalvolwassenen' => 3,
             'aantalkinderen' => 2,
@@ -29,7 +28,7 @@ class KlantenSeeder extends Seeder
             'telefoon' => '+31 6 20398564',
         ]);
 
-        DB::table('klanten')->insert([
+        \App\Models\Klant::create([
             'naam' => 'Klant',
             'aantalvolwassenen' => 2,
             'aantalkinderen' => 1,
@@ -45,7 +44,7 @@ class KlantenSeeder extends Seeder
             'telefoon' => '+31 6 20394857',
         ]);
 
-        DB::table('klanten')->insert([
+        \App\Models\Klant::create([
             'naam' => 'Klant',
             'aantalvolwassenen' => 5,
             'aantalkinderen' => 7,
@@ -61,7 +60,7 @@ class KlantenSeeder extends Seeder
             'telefoon' => '+31 6 30495872',
         ]);
 
-        DB::table('klanten')->insert([
+        \App\Models\Klant::create([
             'naam' => 'Klant',
             'aantalvolwassenen' => 4,
             'aantalkinderen' => 2,
@@ -77,7 +76,7 @@ class KlantenSeeder extends Seeder
             'telefoon' => '+31 6 49723946',
         ]);
 
-        DB::table('klanten')->insert([
+        \App\Models\Klant::create([
             'naam' => 'Klant',
             'aantalvolwassenen' => 1,
             'aantalkinderen' => 5,

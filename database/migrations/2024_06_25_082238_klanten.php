@@ -27,7 +27,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('telefoon');
             $table->timestamps();
-            $table->engine('InnoDB');
         });
     }
 
