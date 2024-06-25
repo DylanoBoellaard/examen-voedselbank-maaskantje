@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('datum_uitgifte');
             $table->date('datum_samenstelling');
-            $table->integer('klant_id');
+            $table->integer('klant_id')->references('id')->on('klanten');
             $table->timestamps();
         });
     }

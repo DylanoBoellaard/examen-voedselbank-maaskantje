@@ -13,7 +13,7 @@ class KlantenSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::tabel('klanten')->insert([
+        DB::table('klanten')->insert([
             'naam' => 'Klant',
             'aantalvolwassenen' => 3,
             'aantalkinderen' => 2,
@@ -28,7 +28,7 @@ class KlantenSeeder extends Seeder
             'email' => 'janboom@hotmail.com',
         ]);
 
-        DB::tabel('klanten')->insert([
+        DB::table('klanten')->insert([
             'naam' => 'Klant',
             'aantalvolwassenen' => 2,
             'aantalkinderen' => 1,
@@ -43,7 +43,7 @@ class KlantenSeeder extends Seeder
             'email' => 'piethaan@outlook.com',
         ]);
 
-        DB::tabel('klanten')->insert([
+        DB::table('klanten')->insert([
             'naam' => 'Klant',
             'aantalvolwassenen' => 5,
             'aantalkinderen' => 7,
@@ -58,7 +58,7 @@ class KlantenSeeder extends Seeder
             'email' => 'klaasboer@gmail.com',
         ]);
 
-        DB::tabel('klanten')->insert([
+        DB::table('klanten')->insert([
             'naam' => 'Klant',
             'aantalvolwassenen' => 4,
             'aantalkinderen' => 2,
@@ -73,7 +73,7 @@ class KlantenSeeder extends Seeder
             'email' => 'steltangela@gmail.com',
         ]);
 
-        DB::tabel('klanten')->insert([
+        DB::table('klanten')->insert([
             'naam' => 'Klant',
             'aantalvolwassenen' => 1,
             'aantalkinderen' => 5,
