@@ -17,4 +17,8 @@ use App\Http\Controllers\klantController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/klant', [klantController::class, 'index'])->name('klant.index');
+Route::get('/klant', [klantController::class, 'overzicht_klant'])->name('klant.overzicht_klant');
+
+Route::get('/klant/toevoegen', [klantController::class, 'toevoegen'])->name('klant.toevoegen');
+
+Route::post('/klant/store', [klantController::class, 'store'])->name('klant.store');

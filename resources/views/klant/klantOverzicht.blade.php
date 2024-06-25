@@ -7,6 +7,7 @@
 <body>
     <!-- Creates a table with a header row and a body row -->
     <h1>Klant Overzicht</h1>
+    <a href="/klant/toevoegen">Maak een nieuwe klant aan</a>
     <table>
         <thead>
             <tr>
