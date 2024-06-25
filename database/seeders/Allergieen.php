@@ -13,29 +13,23 @@ class Allergieen extends Seeder
      */
     public function run(): void
     {
-        $allergieen = [
-            'Gluten',
-            'Lactose',
-            'Noten',
-            'Pinda',
-            'Soja',
-            'Schaaldieren',
-            'Vis',
-            'Ei',
-            'Selderij',
-            'Mosterd',
-            'Sesamzaad',
-            'Zwaveldioxide en sulfieten',
-            'Lupine',
-            'Weekdieren',
-            'Geen allergie',
+        $allergie = [
+            ['naam' => 'Gluten'],
+            ['naam' => 'Lactose'],
+            ['naam' => 'Noten'],
+            ['naam' => 'Pinda'],
+            ['naam' => 'Soja'],
+            ['naam' => 'Schaaldieren'],
+            ['naam' => 'Vis'],
+            ['naam' => 'Ei'],
+            ['naam' => 'Selderij'],
+            ['naam' => 'Mosterd'],
+            ['naam' => 'Sesamzaad'],
+            ['naam' => 'Zwaveldioxide en sulfieten'],
+            ['naam' => 'Lupine'],
+            ['naam' => 'Weekdieren'],
+            ['naam' => 'Geen allergie'],
         ];
-
-        DB::table('allergieen')->insert(
-            array_map(
-                fn ($allergie) => ['naam' => $allergie],
-                $allergieen
-            )
-        );
+        DB::table('allergie')->insert($allergie);
     }
 }

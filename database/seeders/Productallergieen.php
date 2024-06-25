@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class Productallergieen extends Seeder
 {
@@ -12,7 +13,7 @@ class Productallergieen extends Seeder
      */
     public function run(): void
     {
-        $productallergieen = [
+        $productallergie = [
             // create 15 rows and randomize the numbers
             ['product_id' => 1, 'allergie_id' => 1],
             ['product_id' => 2, 'allergie_id' => 2],
@@ -28,5 +29,6 @@ class Productallergieen extends Seeder
             ['product_id' => 7, 'allergie_id' => 14],
             ['product_id' => 8, 'allergie_id' => 14],
         ];
+        DB::table('productallergie')->insert($productallergie);
     }
 }

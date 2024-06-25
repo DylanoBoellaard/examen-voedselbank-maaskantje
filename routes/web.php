@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductallergieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/allergie', [ProductallergieController::class, 'overzicht_allergieen']);
