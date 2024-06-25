@@ -26,6 +26,7 @@ class KlantenSeeder extends Seeder
             'tussenvoegsel' => '',
             'achternaam' => 'Boom',
             'email' => 'janboom@hotmail.com',
+            'telefoon' => '+31 6 20398564',
         ]);
 
         DB::table('klanten')->insert([
@@ -41,6 +42,7 @@ class KlantenSeeder extends Seeder
             'tussenvoegsel' => 'de',
             'achternaam' => 'Haan',
             'email' => 'piethaan@outlook.com',
+            'telefoon' => '+31 6 20394857',
         ]);
 
         DB::table('klanten')->insert([
@@ -56,6 +58,7 @@ class KlantenSeeder extends Seeder
             'tussenvoegsel' => 'de',
             'achternaam' => 'Boer',
             'email' => 'klaasboer@gmail.com',
+            'telefoon' => '+31 6 30495872',
         ]);
 
         DB::table('klanten')->insert([
@@ -71,6 +74,7 @@ class KlantenSeeder extends Seeder
             'tussenvoegsel' => '',
             'achternaam' => 'stelt',
             'email' => 'steltangela@gmail.com',
+            'telefoon' => '+31 6 49723946',
         ]);
 
         DB::table('klanten')->insert([
@@ -86,6 +90,7 @@ class KlantenSeeder extends Seeder
             'tussenvoegsel' => 'de',
             'achternaam' => 'monster',
             'email' => 'rubenmonster@outlook.com',
+            'telefoon' => '+31 6 67394856',
         ]);
     }
 }
