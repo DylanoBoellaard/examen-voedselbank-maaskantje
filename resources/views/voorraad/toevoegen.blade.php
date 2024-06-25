@@ -12,6 +12,8 @@
     <div class="container">
         <h1>Toevoegen Product</h1>
 
+        <a href="{{route('voorraad.overzicht_producten')}}">Homepage</a>
+
         <div>
             <form action="{{ route('voorraad.store') }}" method="POST">
                 @csrf

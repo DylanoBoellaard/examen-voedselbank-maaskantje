@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Overzicht Producten</h1>
         <a href="{{route('home')}}">Homepage</a>
-        <a href="{{route('voorraad.toevoegen')}}">
+        <a href="{{route('voorraad.toevoegen')}}" id="img">
             <img class="small-img" src="/img/Plus-button.png" alt="Plus-button.png">
         </a>
 
@@ -44,7 +44,7 @@
                     <td>{{$product->aantalaanwezig}}</td>
                     <td>
                         <a href="{{route('voorraad.wijzigen', [$product -> id])}}">
-                            <img class="small-img" src="/img/pencil-button.png" alt="pencil-button.png">
+                            <img class="small-img" src="/img/Edit-icon.png" alt="Edit-icon.png">
                         </a>
                     </td>
                     <td>
