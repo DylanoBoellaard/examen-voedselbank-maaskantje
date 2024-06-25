@@ -10,4 +10,10 @@ class voedselpakket extends Model
     use HasFactory;
 
     protected $table = 'voedselpakketten';
+
+    protected $fillable = [
+        'datum_uitgifte',
+        'datum_samenstelling',
+        'klant_id',
+    ];
 }
