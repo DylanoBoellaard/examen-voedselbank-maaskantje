@@ -29,18 +29,6 @@ return new class extends Migration
             $table->timestamps(6);
             $table->engine = 'InnoDB';
         });
-
-        // Insert values in table productcategorieen
-        DB::table('productcategorieen')->insert([
-            [
-                'product_Id' => 1,
-                'categorie_Id' => 1,
-                'isActief' => 1,
-                'opmerkingen' => null,
-                'created_at' => now()->micro(6),
-                'updated_at' => now()->micro(6),
-            ],
-        ]);
     }
 
     /**
