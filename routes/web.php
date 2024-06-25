@@ -23,3 +23,7 @@ Route::get('/voedselpakket', [VoedselPakketController::class, 'overzicht_voedsel
 Route::get('/voedselpakket/create', [VoedselPakketController::class, 'create'])->name('create');
 
 Route::post('/voedselpakket/store', [VoedselPakketController::class, 'store'])->name('store');
+
+Route::get('/voedselpakket/edit/{pakketId}', [VoedselPakketController::class, 'edit'])->name('edit');
+
+Route::put('/voedselpakket/update/{pakketId}', [VoedselPakketController::class, 'update'])->name('update');

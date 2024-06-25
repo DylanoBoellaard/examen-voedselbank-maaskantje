@@ -19,6 +19,7 @@
                 <th>Postcode</th>
                 <th>Plaats</th>
                 <th>Straat</th>
+                <th>Wijzigen</th>
             </tr>
         </thead>
         @if(session()->has('alert'))
@@ -34,6 +35,9 @@
                 <td>{{$voedselpakket->postcode}}</td>
                 <td>{{$voedselpakket->plaats}}</td>
                 <td>{{$voedselpakket->straat}}</td>
+                <td>
+                    <a href="{{route('edit', ['pakketId' => $voedselpakket->id])}}">wijzigen</a>
+                </td>
             </tr>
             @empty
             <tr>
