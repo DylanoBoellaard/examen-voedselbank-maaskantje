@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VoorraadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+// Magazijn
+// Magazijn overzicht
+Route::get('/index', [VoorraadController::class, 'overzicht_producten'])->name('voorraad.overzicht_producten');
