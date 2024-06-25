@@ -38,9 +38,13 @@
                 <input type="submit" value="Sla op">
             </form>
 
-            @if(Session::has('error'))
+            @if ($errors->any())
             <div class="alert alert-error">
-                {{ Session::get('error') }}
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li class="alert-error">{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
             @endif
         </div>
