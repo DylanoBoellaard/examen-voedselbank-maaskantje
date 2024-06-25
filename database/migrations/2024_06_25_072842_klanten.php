@@ -12,13 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        //create migration for klanten
         Schema::create('klanten', function (Blueprint $table) {
             $table->id();
             $table->string('naam');
-            $table->integer('aantalvolwassenen');
-            $table->integer('aantalkinderen');
-            $table->integer('aantalbabies');
+            //foreign key for gezinssamenstelling
+            $table->foreignId('gezinssamenstelling_id')
+                ->references('id')
+                ->on('gezinssamenstelling')
+                ->onDelete('cascade');
             $table->string('huisnummer');
             $table->string('postcode');
             $table->string('plaats');
