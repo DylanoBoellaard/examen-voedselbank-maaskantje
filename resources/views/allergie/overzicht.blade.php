@@ -17,13 +17,14 @@
         padding: 10px;
     }
 </style>
+<a href="/allergie/allergien_list">Lijst allergieën</a>
 
 <body>
     <table>
         <thead>
             <tr>
-                <th>Product Naam</th>
-                <th>Allergie Naam</th>
+                <th>Product</th>
+                <th>Allergie</th>
             </tr>
         </thead>
         <tbody>
