@@ -24,6 +24,10 @@ Route::get('/voorraad/overzicht', [VoorraadController::class, 'overzicht_product
 
 // Voorraad product toevoegen
 Route::get('/voorraad/toevoegen', [VoorraadController::class, 'toevoegen'])->name('voorraad.toevoegen');
-
 // toevoegen form submit page
 Route::post('/voorraad/store', [VoorraadController::class, 'store'])->name('voorraad.store');
+
+// Edit product form page
+Route::get('/voorraad/wijzigen/{productId}', [VoorraadController::class, 'wijzigen'])->name('voorraad.wijzigen');
+// Edit form submit page
+Route::put('/voorraad/update/{productId}', [VoorraadController::class, 'update'])->name('voorraad.update');

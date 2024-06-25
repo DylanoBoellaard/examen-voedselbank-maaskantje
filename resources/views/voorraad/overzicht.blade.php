@@ -42,7 +42,11 @@
                     <td>{{$product->streepjescode}}</td>
                     <td>{{$product->naam}}</td>
                     <td>{{$product->aantalaanwezig}}</td>
-                    <td>aanpassen</td>
+                    <td>
+                        <a href="{{route('voorraad.wijzigen', [$product -> id])}}">
+                            <img class="small-img" src="/img/pencil-button.png" alt="pencil-button.png">
+                        </a>
+                    </td>
                     <td>verwijderen</td>
                 </tr>
                 @empty
