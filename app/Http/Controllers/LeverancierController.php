@@ -54,7 +54,7 @@ class LeverancierController extends Controller
             return redirect('leverancier/show')->with('status', 'Leverancier is toegevoegd!');
         } else {
             // redirecting to the read page with a status message
-            return redirect('leverancier/create')->with('status', 'Het is niet gelukt om leverancier toe te voegen');
+            return redirect('leverancier/create')->with('error', 'Het is niet gelukt om leverancier toe te voegen');
         }
     }
 
@@ -115,7 +115,7 @@ class LeverancierController extends Controller
             return redirect('leverancier/show')->with('status', 'Leverancier is gewijzigd!');
         } else {
             // redirecting to the read page with a status message
-            return redirect('leverancier/create')->with('status', 'Het is niet gelukt om leverancier te wijzigen');
+            return redirect('/leverancier/edit/{{ $leverancier->id }}')->with('error', 'Het is niet gelukt om leverancier te wijzigen');
         }
     }
 
@@ -132,7 +132,7 @@ class LeverancierController extends Controller
             return redirect('leverancier/show')->with('status', 'Leverancier is verwijderd!');
         } else {
             // redirecting to the read page with a status message
-            return redirect('leverancier/show')->with('status', 'leverancier is niet verwijderd');
+            return redirect('leverancier/show')->with('error', 'leverancier is niet verwijderd');
         }
     }
 }
