@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Maakt de Leveringen tabel aan
+        // added the Leveringen table
         Schema::create('leveringen', function (Blueprint $table) {
             $table->id();
             $table->foreignId('leverancier_id');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
         }); 
 
-        // Maakt een foreign key aan voor leverancier_id in de leveringen tabel
+        // added the foreign key to the Leveringen table
         schema::table( 'leveringen', function( Blueprint $table ) {
             $table->foreign( 'leverancier_id' )->references( 'id' )->on( 'leveranciers' );
             // $table->foreign( 'product_id' )->references( 'id' )->on( 'producten' );
@@ -34,7 +34,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Verwijderd de Leveringen tabel
+        // deletes the Leveringen table
         Schema::dropIfExists('leveringen');
     }
 };
