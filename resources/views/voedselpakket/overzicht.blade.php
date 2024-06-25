@@ -20,6 +20,7 @@
                 <th>Plaats</th>
                 <th>Straat</th>
                 <th>Wijzigen</th>
+                <th>Verwijderen</th>
             </tr>
         </thead>
         @if(session()->has('alert'))
@@ -37,6 +38,9 @@
                 <td>{{$voedselpakket->straat}}</td>
                 <td>
                     <a href="{{route('edit', ['pakketId' => $voedselpakket->id])}}">wijzigen</a>
+                </td>
+                <td>
+                    <a href="{{route('delete', ['pakketId' => $voedselpakket->id])}}">Verwijderen</a>
                 </td>
             </tr>
             @empty

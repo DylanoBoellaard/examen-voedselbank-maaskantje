@@ -53,4 +53,11 @@ class VoedselPakketController extends Controller
 
         return redirect(route('overzicht'));
     }
+
+    public function delete($pakketId)
+    {
+        DB::table('voedselpakketten')->where('id', $pakketId)->delete();
+
+        return redirect(route('overzicht'));
+    }
 }

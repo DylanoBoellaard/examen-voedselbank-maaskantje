@@ -27,3 +27,5 @@ Route::post('/voedselpakket/store', [VoedselPakketController::class, 'store'])->
 Route::get('/voedselpakket/edit/{pakketId}', [VoedselPakketController::class, 'edit'])->name('edit');
 
 Route::put('/voedselpakket/update/{pakketId}', [VoedselPakketController::class, 'update'])->name('update');
+
+Route::get('/voedselpakket/delete/{pakketId}', [VoedselPakketController::class, 'delete'])->name('delete');
