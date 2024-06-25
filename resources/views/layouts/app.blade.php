@@ -1,3 +1,4 @@
+<!-- basic template for all the pages -->
 <!DOCTYPE html>
 <html lang="en">
 

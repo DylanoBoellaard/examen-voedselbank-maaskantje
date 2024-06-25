@@ -1,13 +1,17 @@
+<!-- includes the template -->
 @include("./layouts/app")
 
+<!-- section for the title -->
 <section class="title">
     <h1>Overzicht voedsel pakketten</h1>
 </section>
 
+<!-- section for the create button -->
 <section class="create">
     <a href="{{route('create')}}">Nieuw voedsel pakket</a>
 </section>
 
+<!-- section for the table -->
 <section class="table">
     <table>
         <thead>
@@ -23,6 +27,7 @@
                 <th>Verwijderen</th>
             </tr>
         </thead>
+        <!-- checks if there is a alert -->
         @if(session()->has('alert'))
         <h1>{{session()->get('alert')}}</h1>
         @else
@@ -43,9 +48,10 @@
                     <a href="{{route('delete', ['pakketId' => $voedselpakket->id])}}">Verwijderen</a>
                 </td>
             </tr>
+            <!-- if empty then show this td -->
             @empty
             <tr>
-                <td colspan="7">er zijn geen voedsel pakketten op dit moment.</td>
+                <td colspan="9">er zijn geen voedsel pakketten op dit moment.</td>
             </tr>
             @endforelse
         </tbody>

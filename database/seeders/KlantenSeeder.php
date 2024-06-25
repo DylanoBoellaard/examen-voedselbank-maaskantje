@@ -7,9 +7,7 @@ use Illuminate\Database\Seeder;
 
 class KlantenSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    // this seeder makes 6 users
     public function run(): void
     {
         \App\Models\Klant::create([
