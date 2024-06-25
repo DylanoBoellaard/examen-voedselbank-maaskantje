@@ -15,8 +15,8 @@ class LeverancierController extends Controller
     }
 
     public function store(Request $request)
-    {       
-   
+    {
+
         // validating the request
         $validatedData = $request->validate([
             'bedrijfsnaam' => ['required', 'max:100'],
@@ -28,7 +28,7 @@ class LeverancierController extends Controller
             'voornaam' => ['required', 'max:100'],
             'tussenvoegsel' => ['max:50'],
             'achternaam' => ['required', 'max:100'],
-            'telefoonnummer' => ['required', 'min:14' , 'max:40'],
+            'telefoonnummer' => ['required', 'min:14', 'max:40'],
         ]);
 
         // storing the validated data
@@ -48,8 +48,14 @@ class LeverancierController extends Controller
         // saving the data
         $leverancier->save();
 
-        // redirecting to the read page with a status message
-        return redirect('leverancier.read')->with('status', 'Leverancier is toegevoegd!');
+        // an if statement to check if the data is saved
+        if ($leverancier->save()) {
+            // redirecting to the read page with a status message
+            return redirect('leverancier/show')->with('status', 'Leverancier is toegevoegd!');
+        } else {
+            // redirecting to the read page with a status message
+            return redirect('leverancier/create')->with('status', 'Het is niet gelukt om leverancier toe te voegen');
+        }
     }
 
     public function show()
@@ -83,7 +89,7 @@ class LeverancierController extends Controller
             'voornaam' => ['required', 'max:100'],
             'tussenvoegsel' => ['max:50'],
             'achternaam' => ['required', 'max:100'],
-            'telefoonnummer' => ['required', 'min:14' , 'max:40'],
+            'telefoonnummer' => ['required', 'min:14', 'max:40'],
         ]);
 
         $leverancier = Leverancier::find($id);
@@ -102,8 +108,15 @@ class LeverancierController extends Controller
             'telefoon' => $validatedData['telefoonnummer'],
         ]);
 
-        // redirecting to the read page with a status message
-        return redirect('leverancier/show')->with('status', 'Leverancier is gewijzigd!');
+
+        // an if statement to check if the data is saved
+        if ($leverancier->update()) {
+            // redirecting to the read page with a status message
+            return redirect('leverancier/show')->with('status', 'Leverancier is gewijzigd!');
+        } else {
+            // redirecting to the read page with a status message
+            return redirect('leverancier/create')->with('status', 'Het is niet gelukt om leverancier te wijzigen');
+        }
     }
 
     public function destroy($id)
@@ -114,7 +127,12 @@ class LeverancierController extends Controller
         // deleting the data
         $leverancier->delete();
 
-        // redirecting to the read page with a status message
-        return redirect('leverancier/show')->with('status', 'Leverancier is verwijderd!');
+        if ($leverancier->delete()) {
+            // redirecting to the read page with a status message
+            return redirect('leverancier/show')->with('status', 'Leverancier is verwijderd!');
+        } else {
+            // redirecting to the read page with a status message
+            return redirect('leverancier/show')->with('status', 'leverancier is niet verwijderd');
+        }
     }
 }

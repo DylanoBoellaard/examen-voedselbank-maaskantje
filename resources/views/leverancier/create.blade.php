@@ -11,6 +11,8 @@
     <main>
         <a href="#"><h3>Ga terug</h3></a>
 
+        <p>{{ session('status') }}</p>
+
         <h1>Leverancier Formulier</h1>
         <form action="/leverancier" method="post">
             @csrf

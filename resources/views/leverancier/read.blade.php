@@ -15,6 +15,11 @@
 
         <p>{{ session('status') }}</p>
         <table>
+            @if (count($leveranciers) === 0)
+            <tr>
+                <td>Geen leveranciers aanwezig</td>
+            </tr>
+            @else
             <tr>
                 <th>Bedrijfsnaam</th>
                 <th>Adres</th>
@@ -39,6 +44,7 @@
                 </form>
             </tr>
             @endforeach
+            @endif
         </table>
     </main>
 </body>
