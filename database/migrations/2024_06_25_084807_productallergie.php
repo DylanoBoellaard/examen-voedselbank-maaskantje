@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('productallergie', function (Blueprint $table) {
+            $table->id();
+            $table->integer('product_id')->constrained()->references('id')->on('producten');
+            $table->integer('allergie_id')->constrained()->references('id')->on('allergieen');
+            $table->timestamps();
+        });
     }
 
     /**
