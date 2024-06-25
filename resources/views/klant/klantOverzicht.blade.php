@@ -46,6 +46,17 @@
                 <td>
                     <a href="{{route('klant.wijzigen', [$klant -> id])}}">wijzigen</a>
                 </td>
+                <td>
+                    <form action="{{ route('klant.verwijderen', [$klant -> id]) }}" method="POST">
+                        <!-- Route to delete page with product ID -->
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" style="background: none; border: none; padding: 0; margin: 0; cursor: pointer;">
+                            verwijderen
+                        </button>
+                    </form>
+                </td>
+
                 <!-- If there are no klanten, display a message -->
                 @empty
             <tr>

@@ -26,3 +26,5 @@ Route::post('/klant/store', [klantController::class, 'store'])->name('klant.stor
 Route::get('/klant/wijzigen/{klant}', [klantController::class, 'wijzigen'])->name('klant.wijzigen');
 
 Route::put('/klant/update/{klant}', [klantController::class, 'update'])->name('klant.update');
+
+Route::delete('/klant/verwijderen/{klant}', [klantController::class, 'verwijderen'])->name('klant.verwijderen');
