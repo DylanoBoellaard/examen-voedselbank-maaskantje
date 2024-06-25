@@ -1,15 +1,40 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Database\Seeders;
 
-use Illuminate\Http\Request;
-use App\Models\Allergieen;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class AllergieController extends Controller
+class Allergieen extends Seeder
 {
-    public function overzicht_allergieen()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
-        $allergieen = Allergieen::all();
-        return view('allergieen', ['allergieen' => $allergieen]);
+        $allergieen = [
+            'Gluten',
+            'Lactose',
+            'Noten',
+            'Pinda',
+            'Soja',
+            'Schaaldieren',
+            'Vis',
+            'Ei',
+            'Selderij',
+            'Mosterd',
+            'Sesamzaad',
+            'Zwaveldioxide en sulfieten',
+            'Lupine',
+            'Weekdieren',
+        ];
+
+        DB::table('allergieen')->insert(
+            array_map(
+                fn ($allergie) => ['naam' => $allergie],
+                $allergieen
+            )
+        );
     }
 }
