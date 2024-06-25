@@ -1,0 +1,52 @@
+/* removes basic margin and padding from all the elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* makes colours a variable to make it easier to access and easier to change the colour everywhere */
+:root {
+    --black: rgb(0,0,0);
+    --darker-gray: rgb(150, 150, 150);
+    --lighter-gray: rgb(187, 187, 187);
+}
+
+/* gives the body a display flex and puts all the content in the middle of the body element */
+/* also put all the content under each other and give the body a basic height of the full screen */
+body {
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* gives the title a fixed position at the top left and with a little space */
+section.title {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+
+}
+
+/* collapses the border so the borders of all the elements are not next to each other */
+table {
+    border-collapse: collapse;
+}
+
+/* added a dark gray background color to the table heads */
+th {
+    background-color: var(--darker-gray);
+}
+
+/* adds padding and a border to all the table heads and table data's */
+th, td {
+    padding: 1rem;
+    border: 0.1rem solid var(--black);
+}
+
+/* adds a lighter gray background color to the table data's and aligns the text to the center */
+td {
+    background-color: var(--lighter-gray);
+    text-align: center;
+}
