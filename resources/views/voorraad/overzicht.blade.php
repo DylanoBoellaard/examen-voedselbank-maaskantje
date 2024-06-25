@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazijn overzicht</title>
     @vite(['resources/scss/voorraad/index.scss', 'resources/scss/voorraad/global.scss'])
 </head>
+
 <body>
     <div class="container">
         <h1>Overzicht Producten</h1>
         <a href="{{route('home')}}">Homepage</a>
+        <a href="{{route('voorraad.toevoegen')}}">
+            <img class="small-img" src="/img/Plus-button.png" alt="Plus-button.png">
+        </a>
+
         <table>
             <thead>
                 <tr>
@@ -35,11 +41,12 @@
                 </tr>
                 @empty
                 <tr>
-                    <td>No products found</td>
+                    <td colspan="7">No products found</td>
                 </tr>
                 @endforelse
             </tbody>
         </table>
     </div>
 </body>
+
 </html>

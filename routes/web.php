@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Magazijn
-// Magazijn overzicht
-Route::get('/index', [VoorraadController::class, 'overzicht_producten'])->name('voorraad.overzicht_producten');
+// Voorraad
+// Voorraad producten overzicht
+Route::get('/voorraad/overzicht', [VoorraadController::class, 'overzicht_producten'])->name('voorraad.overzicht_producten');
+
+// Voorraad product toevoegen
+Route::get('/voorraad/toevoegen', [VoorraadController::class, 'toevoegen'])->name('voorraad.toevoegen');
+
+// toevoegen form submit page
+Route::post('/voorraad/store', [VoorraadController::class, 'store'])->name('voorraad.store');

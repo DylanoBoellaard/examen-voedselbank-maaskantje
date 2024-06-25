@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorieen;
+use App\Models\Magazijn;
+use App\Models\Productcategorieen;
 use App\Models\Producten;
 use Illuminate\Http\Request;
 
@@ -24,5 +27,48 @@ class VoorraadController extends Controller
         return view('voorraad.overzicht', [
             'productList' => $productList
         ]);
+    }
+
+    public function toevoegen()
+    {
+        $categories = Categorieen::all();
+        return view('voorraad.toevoegen', compact('categories'));
+    }
+
+    public function store(Request $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'productnaam' => 'required|string|max:100',
+            'streepjescode' => 'required|string|max:13',
+            'categorie' => 'required|integer|exists:categorieen,id',
+            'aantalaanwezig' => 'required|integer|min:0',
+        ]);
+
+        // Create the product
+        $product = Producten::create([
+            'productnaam' => $validatedData['productnaam'],
+            'streepjescode' => $validatedData['streepjescode'],
+            'isActief' => true,
+            'opmerkingen' => $request->input('opmerkingen', null),
+        ]);
+
+        // Assign category to the product
+        Productcategorieen::create([
+            'product_Id' => $product->id,
+            'categorie_Id' => $validatedData['categorie'],
+            'isActief' => true,
+            'opmerkingen' => $request->input('opmerkingen', null),
+        ]);
+
+        // Add product to the warehouse (magazijn)
+        Magazijn::create([
+            'product_Id' => $product->id,
+            'aantalaanwezig' => $validatedData['aantalaanwezig'],
+            'isActief' => true,
+            'opmerkingen' => $request->input('opmerkingen', null),
+        ]);
+
+        return redirect()->route('voorraad.overzicht_producten')->with('success', 'Product is succesvol toegevoegd');
     }
 }

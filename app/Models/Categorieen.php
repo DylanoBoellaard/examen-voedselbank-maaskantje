@@ -18,4 +18,12 @@ class Categorieen extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function products()
+    {
+        /* One category contains many products. It is being handled by the productcategorieen table.
+            Laravel will define the relationship via the productcategorieen table
+        */
+        return $this->belongsToMany(Producten::class, 'productcategorieen', 'categorie_Id', 'product_Id');
+    }
 }
