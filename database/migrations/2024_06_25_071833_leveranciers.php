@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Maakt de Leveranciers tabel aan
+        // added the Leveranciers table
         Schema::create('leveranciers', function (Blueprint $table) {
             $table->id();
             $table->string('bedrijfsnaam')->max(100);
@@ -34,7 +34,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Verwijderd de Leveranciers tabel
+        // deletes the Leveranciers table
         Schema::dropIfExists('leveranciers');
     }
 };
