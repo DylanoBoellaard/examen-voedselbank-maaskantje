@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toevoegen levering</title>
-    @vite(['resources/scss/magazijn/index.scss', 'resources/scss/magazijn/global.scss'])
+    @vite(['resources/scss/voorraad/index.scss', 'resources/scss/voorraad/global.scss'])
 </head>
 
 <body>
@@ -37,17 +37,16 @@
 
                 <input type="submit" value="Sla op">
             </form>
-
-            @if ($errors->any())
-            <div class="alert alert-error">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li class="alert-error">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
         </div>
+        @if ($errors->any())
+        <div class="alert alert-error">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li class="alert-error">{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </div>
 </body>
 

@@ -40,7 +40,7 @@ class VoorraadController extends Controller
         // Validate the request data
         $validatedData = $request->validate([
             'productnaam' => 'required|string|max:100',
-            'streepjescode' => 'required|string|max:13',
+            'streepjescode' => 'required|string|min:13|max:13',
             'categorie' => 'required|integer|exists:categorieen,id',
             'aantalaanwezig' => 'required|integer|min:0',
         ]);

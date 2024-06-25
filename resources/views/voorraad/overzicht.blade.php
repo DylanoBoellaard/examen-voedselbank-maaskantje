@@ -16,6 +16,12 @@
             <img class="small-img" src="/img/Plus-button.png" alt="Plus-button.png">
         </a>
 
+        @if(Session::has('success'))
+        <div class="alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+        @endif
+
         <table>
             <thead>
                 <tr>
