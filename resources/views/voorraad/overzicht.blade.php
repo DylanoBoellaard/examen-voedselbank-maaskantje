@@ -59,7 +59,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7">No products found</td>
+                    <td colspan="7">Er zijn geen producten gevonden</td>
                 </tr>
                 @endforelse
             </tbody>
