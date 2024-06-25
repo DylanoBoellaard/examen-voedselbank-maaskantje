@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <title>Allergieën Lijst</title>
 </head>
 <style>
     table {
@@ -21,16 +22,12 @@
 <body>
     <table>
         <thead>
-            <tr>
-                <th>Product Naam</th>
-                <th>Allergie Naam</th>
-            </tr>
+            <th>Allergieën</th>
         </thead>
         <tbody>
-            @foreach ($productallergie as $item)
+            @foreach ($allergie as $allergie)
             <tr>
-                <td>{{ $item['productNaam'] }}</td>
-                <td>{{ $item['allergieen'] }}</td>
+                <td>{{ $allergie->naam }}</td>
             </tr>
             @endforeach
         </tbody>

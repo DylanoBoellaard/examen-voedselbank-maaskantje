@@ -15,3 +15,5 @@ use App\Http\Controllers\ProductallergieController;
 */
 
 Route::get('/allergie', [ProductallergieController::class, 'overzicht_allergieen']);
+
+Route::get('/allergie/allergien_list', [ProductallergieController::class, 'wijzig'])->name('allergieen.list');

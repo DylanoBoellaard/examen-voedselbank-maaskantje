@@ -24,8 +24,6 @@ class Productallergieen extends Seeder
             ['product_id' => 6, 'allergie_id' => 7],
             ['product_id' => 7, 'allergie_id' => 7],
             ['product_id' => 8, 'allergie_id' => 8],
-            ['product_id' => 9, 'allergie_id' => 15],
-            ['product_id' => 10, 'allergie_id' => 15],
             ['product_id' => 7, 'allergie_id' => 14],
             ['product_id' => 8, 'allergie_id' => 14],
         ];
