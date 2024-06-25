@@ -15,6 +15,14 @@ class ProductSeeder extends Seeder
     {
         $data = [
             [
+                'productnaam' => 'Pinda',
+                'streepjescode' => '1234832910345',
+                'isActief' => true,
+                'opmerkingen' => null,
+                'created_at' => now()->micro(6),
+                'updated_at' => now()->micro(6),
+            ],
+            [
                 'productnaam' => 'Babypoeder',
                 'streepjescode' => '9234765012346',
                 'isActief' => true,
