@@ -19,8 +19,4 @@ class Producten extends Model
         'created_at',
         'updated_at',
     ];
-
-    // protected $casts = [
-    //     'isActief' => 'boolean',
-    // ];
 }
