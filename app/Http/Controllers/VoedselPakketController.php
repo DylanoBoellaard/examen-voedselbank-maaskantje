@@ -9,7 +9,29 @@ class VoedselPakketController extends Controller
 {
     public function overzicht_voedsel_pakket()
     {
-        $data = VoedselPakket::join('klanten', 'voedselpakketten.klant_id', 'klanten.id')->get();
+        try {
+            $data = VoedselPakket::join('klanten', 'voedselpakketten.klant_id', 'klanten.id')->get();
+        } catch (\Throwable $e) {
+            return redirect(route('overzicht'))->with('alert', 'Error cannot get the data.');
+        }
         return view('voedselpakket.overzicht', compact('data'));
+    }
+
+    public function create()
+    {
+        return view('voedselpakket.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'datum_uitgifte' => 'required|date|date_format:Y-m-d',
+            'datum_samenstelling' => 'required|date|date_format:Y-m-d',
+            'klant_id' => 'required|integer',
+        ]);
+
+        VoedselPakket::create($validated);
+
+        return redirect(route('overzicht'));
     }
 }
