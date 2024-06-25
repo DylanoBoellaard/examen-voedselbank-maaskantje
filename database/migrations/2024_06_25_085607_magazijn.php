@@ -26,18 +26,6 @@ return new class extends Migration
             $table->timestamps(6);
             $table->engine = 'InnoDB';
         });
-
-        // Insert values in table allergeens
-        DB::table('magazijn')->insert([
-            [
-                'product_Id' => 1,
-                'aantalaanwezig' => 23,
-                'isActief' => 1,
-                'opmerkingen' => null,
-                'created_at' => now()->micro(6),
-                'updated_at' => now()->micro(6),
-            ],
-        ]);
     }
 
     /**

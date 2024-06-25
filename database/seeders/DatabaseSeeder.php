@@ -22,9 +22,12 @@ class DatabaseSeeder extends Seeder
             GezinssamenstellingSeeder::class,
             KlantenSeeder::class,
             ProductSeeder::class,
+            CategorieSeeder::class,
+            MagazijnSeeder::class,
+            ProductcategorieenSeeder::class,
+            LeverancierSeeder::class,
         ]);
         $this->call([
-            LeverancierSeeder::class
         ]);
     }
 }
