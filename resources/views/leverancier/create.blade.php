@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <p>{{ session('status') }}</p>
     <main>
         <a href=""><h3>Ga terug</h3></a>
 

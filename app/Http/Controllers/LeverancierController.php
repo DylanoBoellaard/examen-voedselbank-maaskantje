@@ -49,6 +49,15 @@ class LeverancierController extends Controller
         $leverancier->save();
 
         // redirecting to the homepage
-        return redirect('/leverancier/create')->with('status', 'Leverancier is toegevoegd!');
+        return redirect('leverancier.read')->with('status', 'Leverancier is toegevoegd!');
+    }
+
+    public function show()
+    {
+        // getting all the data from the database
+        $leveranciers = Leverancier::all();
+
+        // returning the view with the data
+        return view('leverancier.read', ['leveranciers' => $leveranciers]);
     }
 }
