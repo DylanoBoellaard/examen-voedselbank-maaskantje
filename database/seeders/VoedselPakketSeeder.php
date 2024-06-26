@@ -7,9 +7,7 @@ use Illuminate\Database\Seeder;
 
 class VoedselPakketSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    // this makes 5 voedselpakketten
     public function run(): void
     {
         \App\Models\VoedselPakket::create([
