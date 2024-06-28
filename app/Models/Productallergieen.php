@@ -13,11 +13,13 @@ class Productallergie extends Model
     use HasFactory;
     // making sure the table isn't called 'allergieens'
     protected $table = 'Productallergie';
+
     // all tables that are fillable
     protected $fillable = [
         'product_id',
         'allergie_id',
     ];
+
 
     public function hasproduct(): HasOne
     {
