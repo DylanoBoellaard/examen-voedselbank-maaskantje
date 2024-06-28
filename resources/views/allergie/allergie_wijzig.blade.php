@@ -11,7 +11,7 @@
     <form action="{{ route('allergie.wijzig', $allergie->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <label for="name">Allergie Naam:</label>
+        <label for="name">Allergie naam:</label>
         <input type="text" id="name" name="naam" value="{{ $allergie->naam }}" required>
         <button type="submit">Wijzig</button>
     </form>

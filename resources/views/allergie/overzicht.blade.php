@@ -28,12 +28,18 @@
             </tr>
         </thead>
         <tbody>
+            @if($productallergie->isEmpty())
+            <tr>
+                <td colspan="2">er zijn nog geen allergieën geregistreerd</td>
+            </tr>
+            @else
             @foreach ($productallergie as $item)
             <tr>
                 <td>{{ $item['productNaam'] }}</td>
                 <td>{{ $item['allergieen'] }}</td>
             </tr>
             @endforeach
+            @endif
         </tbody>
     </table>
 </body>

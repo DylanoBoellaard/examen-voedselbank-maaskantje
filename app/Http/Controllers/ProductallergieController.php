@@ -18,13 +18,19 @@ class ProductallergieController extends Controller
             ->select('product.id as productId', 'allergie.naam as allergieNaam', 'product.productnaam as productNaam')
             ->orderBy('product.productnaam', 'asc')
             ->get();
-
         $grouped = $productallergie->groupBy('productId')->map(function ($items) {
             return [
                 'productNaam' => $items->first()->productNaam,
                 'allergieen' => $items->pluck('allergieNaam')->unique()->implode(', ')
             ];
         });
+
+        if ($productallergie->isEmpty()) {
+            // Return a view with a message indicating no allergies are registered
+            return view('allergie/overzicht', ['productallergie' => $grouped], ['message' => 'er zijn nog geen allergieën geregistreerd']);
+        }
+
+
 
         return view('allergie/overzicht', ['productallergie' => $grouped]);
     }
