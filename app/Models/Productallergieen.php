@@ -16,8 +16,8 @@ class Productallergie extends Model
 
     // all tables that are fillable
     protected $fillable = [
-        'product_id',
-        'allergie_id',
+        'product_Id',
+        'allergie_Id',
     ];
 
 

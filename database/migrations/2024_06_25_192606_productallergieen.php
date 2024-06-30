@@ -16,31 +16,24 @@ return new class extends Migration
         Schema::dropIfExists('productallergieen');
         Schema::create('productallergieen', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_Id') // Declare foreign key
-                ->references('id')
-                ->on('producten')
-                ->onDelete('cascade'); // Cascade = if record in referenced table gets deleted, all related records in the current table will also be deleted
-                $table->foreignId('allergie_Id') // Declare foreign key
-                ->references('id')
-                ->on('allergieen')
-                ->onDelete('cascade');
+            $table->foreignId('product_id');
+            $table->foreignId('allergie_id');
             $table->boolean('isActief')->default(true);
             $table->string('opmerkingen', 250)->nullable();
             $table->timestamps(6);
             $table->engine = 'InnoDB';
         });
 
-        // Insert values in table productallergieen
-        DB::table('productallergieen')->insert([
-            [
-                'product_Id' => 1,
-                'allergie_Id' => 1,
-                'isActief' => 1,
-                'opmerkingen' => null,
-                'created_at' => now()->micro(6),
-                'updated_at' => now()->micro(6),
-            ],
-        ]);
+        Schema::table('productallergieen', function (Blueprint $table) {
+            $table->foreign('product_id') // Declare foreign key
+                ->references('id')
+                ->on('producten')
+                ->onDelete('cascade'); // Cascade = if record in referenced table gets deleted, all related records in the current table will also be deleted
+            $table->foreign('allergie_id') // Declare foreign key
+                ->references('id')
+                ->on('allergieen')
+                ->onDelete('cascade');
+        });
     }
 
     /**

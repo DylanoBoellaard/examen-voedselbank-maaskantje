@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\VoorraadController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductallergieController;
-use App\Http\Controllers\AllergieController;
 use App\Http\Controllers\klantController;
 use App\Http\Controllers\LeverancierController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,17 +59,3 @@ Route::get('/leverancier/edit/{id}', [LeverancierController::class, 'edit']);
 Route::put('/leverancier/{id}', [LeverancierController::class, 'update']);
 // Leverancier delete
 Route::delete('/leverancier/{id}', [LeverancierController::class, 'destroy']);
-
-// Allergieen
-Route::get('/allergie', [ProductallergieController::class, 'overzicht_allergieen']);
-
-Route::get('/allergie/allergien_list', [ProductallergieController::class, 'wijzig'])->name('allergieen.list');
-
-Route::get('/allergie/{id}/allergie_wijzig', 'App\Http\Controllers\AllergieController@wijzig')->name('allergie.wijzig');
-Route::post('/allergie/{id}/allergie_wijzig', 'App\Http\Controllers\AllergieController@wijzig')->name('allergie.wijzig');
-Route::put('/allergie/{id}/allergie_wijzig', 'App\Http\Controllers\AllergieController@update')->name('allergie.wijzig');
-
-Route::get('/allergie/allergie_toevoegen', 'App\Http\Controllers\AllergieController@toevoegen')->name('allergie.toevoegen');
-Route::post('/allergie/store', 'App\Http\Controllers\AllergieController@store')->name('allergie.store');
-
-Route::delete('/allergie/{id}/allergie_verwijder', 'App\Http\Controllers\AllergieController@verwijder')->name('allergie.verwijder');

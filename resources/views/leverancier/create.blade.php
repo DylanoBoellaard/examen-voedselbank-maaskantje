@@ -11,7 +11,7 @@
 <body>
     <main>
         <div class="back">
-            <a href="#">
+            <a href="/">
                 <h3>Ga terug</h3>
             </a>
         </div>

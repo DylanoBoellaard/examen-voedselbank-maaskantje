@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             LeverancierSeeder::class,
             Allergieen::class,
             ProductAllergieen::class,
+            ProductAllergieenSeeder::class,
         ]);
     }
 }
