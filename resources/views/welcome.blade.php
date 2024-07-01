@@ -17,5 +17,7 @@
        <a href="/klant">Klant</a>
        <a href="/voorraad/overzicht">Voorraad</a>
        <a href="/leverancier/create">Leverancier</a>
+       <a href="/allergie">Allergie</a>
+       <a href="/voedselpakket">Voedselpakket</a>
     </body>
 </html>

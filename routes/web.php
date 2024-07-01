@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\VoedselPakketController;
 use App\Http\Controllers\VoorraadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\klantController;
 use App\Http\Controllers\LeverancierController;
+use App\Http\Controllers\ProductallergieController;
 
 
 /*
@@ -17,6 +19,7 @@ use App\Http\Controllers\LeverancierController;
 |
 */
 
+// is the route for the welcome page
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -59,3 +62,36 @@ Route::get('/leverancier/edit/{id}', [LeverancierController::class, 'edit']);
 Route::put('/leverancier/{id}', [LeverancierController::class, 'update']);
 // Leverancier delete
 Route::delete('/leverancier/{id}', [LeverancierController::class, 'destroy']);
+
+// Allergieen
+Route::get('/allergie', [ProductallergieController::class, 'overzicht_allergieen']);
+
+Route::get('/allergie/allergien_list', [ProductallergieController::class, 'wijzig'])->name('allergieen.list');
+
+Route::get('/allergie/{id}/allergie_wijzig', 'App\Http\Controllers\AllergieController@wijzig')->name('allergie.wijzig');
+Route::post('/allergie/{id}/allergie_wijzig', 'App\Http\Controllers\AllergieController@wijzig')->name('allergie.wijzig');
+Route::put('/allergie/{id}/allergie_wijzig', 'App\Http\Controllers\AllergieController@update')->name('allergie.wijzig');
+
+Route::get('/allergie/allergie_toevoegen', 'App\Http\Controllers\AllergieController@toevoegen')->name('allergie.toevoegen');
+Route::post('/allergie/store', 'App\Http\Controllers\AllergieController@store')->name('allergie.store');
+
+Route::delete('/allergie/{id}/allergie_verwijder', 'App\Http\Controllers\AllergieController@verwijder')->name('allergie.verwijder');
+
+// Voedselpakketen
+// is the route for the overzicht page
+Route::get('/voedselpakket', [VoedselPakketController::class, 'overzicht_voedsel_pakket'])->name('overzicht');
+
+// is the route for the create page
+Route::get('/voedselpakket/create', [VoedselPakketController::class, 'create'])->name('create');
+
+// is the route for the store method
+Route::post('/voedselpakket/store', [VoedselPakketController::class, 'store'])->name('store');
+
+// is the route for the edit page
+Route::get('/voedselpakket/edit/{pakketId}', [VoedselPakketController::class, 'edit'])->name('edit');
+
+// is the route for the update method
+Route::put('/voedselpakket/update/{pakketId}', [VoedselPakketController::class, 'update'])->name('update');
+
+// is the route for the delete method
+Route::get('/voedselpakket/delete/{pakketId}', [VoedselPakketController::class, 'delete'])->name('delete');

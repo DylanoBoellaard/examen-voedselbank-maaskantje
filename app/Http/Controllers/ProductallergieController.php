@@ -12,14 +12,14 @@ class ProductallergieController extends Controller
 {
     public function overzicht_allergieen()
     {
-        $productallergie = DB::table('productallergie')
-            ->join('allergie', 'allergie.id', '=', 'productallergie.allergie_id')
-            ->join('product', 'productallergie.product_id', '=', 'product.id')
-            ->select('product.id as productId', 'allergie.naam as allergieNaam', 'product.productnaam as productNaam')
+        $productallergie = DB::table('Productallergie')
+            ->join('allergie', 'allergie.id', '=', 'Productallergie.allergie_Id')
+            ->join('product', 'Productallergie.product_Id', '=', 'product.id')
+            ->select('product.id as product_Id', 'allergie.naam as allergieNaam', 'product.productnaam as productNaam')
             ->orderBy('product.productnaam', 'asc')
             ->get();
 
-        $grouped = $productallergie->groupBy('productId')->map(function ($items) {
+        $grouped = $productallergie->groupBy('product_Id')->map(function ($items) {
             return [
                 'productNaam' => $items->first()->productNaam,
                 'allergieen' => $items->pluck('allergieNaam')->unique()->implode(', ')
